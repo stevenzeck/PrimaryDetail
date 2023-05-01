@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources xmlns:window="http://schemas.android.com/apk/res-auto">
+
+    <!-- Automatically split the following activity pairs. -->
+    <SplitPairRule
+        window:finishPrimaryWithSecondary="adjacent"
+        window:finishSecondaryWithPrimary="always"
+        window:splitMinWidthDp="840"
+        window:splitRatio="0.3">
+        <SplitPairFilter
+            window:primaryActivityName=".MainActivity"
+            window:secondaryActivityName=".DetailActivity" />
+        <SplitPairFilter
+            window:primaryActivityName="*"
+            window:secondaryActivityAction="android.intent.action.VIEW"
+            window:secondaryActivityName="*/*" />
+    </SplitPairRule>
+
+    <!-- Automatically launch a placeholder for the list activity. -->
+    <SplitPlaceholderRule
+        window:placeholderActivityName=".PlaceholderActivity"
+        window:splitMinWidthDp="840"
+        window:splitRatio="0.3">
+        <ActivityFilter window:activityName=".MainActivity" />
+    </SplitPlaceholderRule>
+</resources>

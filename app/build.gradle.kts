@@ -75,6 +75,8 @@ dependencies {
 
     // Room Database
     implementation(libs.bundles.room)
+    implementation(libs.window)
+    implementation(libs.startup)
     kapt(libs.room.compiler)
 
     // Material

@@ -22,7 +22,9 @@ recyclerview = "1.3.0"
 recyclerview-selection = "1.1.0"
 retrofit = "2.9.0"
 room = "2.5.1"
+startup = "1.1.1"
 swiperefreshlayout = "1.1.0"
+window = "1.1.0-beta02"
 
 [libraries]
 androidx-core = { group = "androidx.core", name = "core-ktx", version.ref = "androidx-core" }
@@ -50,7 +52,9 @@ retrofit = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = 
 room-runtime = { group = "androidx.room", name = "room-runtime", version.ref = "room" }
 room-ktx = { group = "androidx.room", name = "room-ktx", version.ref = "room" }
 room-compiler = { group = "androidx.room", name = "room-compiler", version.ref = "room" }
+startup = { group = "androidx.startup", name = "startup-runtime", version.ref = "startup" }
 swiperefreshlayout = { group = "androidx.swiperefreshlayout", name="swiperefreshlayout", version.ref ="swiperefreshlayout" }
+window = { group = "androidx.window", name = "window", version.ref = "window" }
 
 [bundles]
 kotlin-serialization = ["kotlin-serialization", "kotlin-serialization-converter"]

@@ -2,20 +2,16 @@ package com.example.primarydetail.posts.ui
 
 import android.graphics.Typeface
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import androidx.core.os.bundleOf
-import androidx.navigation.findNavController
 import androidx.recyclerview.selection.ItemDetailsLookup
 import androidx.recyclerview.selection.SelectionTracker
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.example.primarydetail.R
 import com.example.primarydetail.databinding.PostListItemBinding
 import com.example.primarydetail.posts.domain.model.Post
 
-class PostListAdapter(private val markRead: (Long) -> Unit) :
+class PostListAdapter(private val onItemSelected: (Long) -> Unit) :
     ListAdapter<Post, PostListAdapter.ViewHolder>(PostListDiff()) {
 
     // Declare the SelectionTracker
@@ -82,20 +78,7 @@ class PostListAdapter(private val markRead: (Long) -> Unit) :
                 notifyItemChanged(mSelected)
                 mSelected = absoluteAdapterPosition
                 notifyItemChanged(mSelected)
-                markRead(post.id)
-
-                val bundle = bundleOf(POST_ID to post.id)
-
-                val itemDetailFragmentContainer: View? =
-                    binding.root.rootView.findViewById(R.id.post_detail_container)
-
-                if (itemDetailFragmentContainer != null) {
-                    itemDetailFragmentContainer.findNavController()
-                        .navigate(R.id.postDetailFragmentPane, bundle)
-                } else {
-                    itemView.findNavController()
-                        .navigate(R.id.action_postListFragment_to_postDetailFragment, bundle)
-                }
+                onItemSelected(post.id)
             }
         }
 
@@ -104,10 +87,6 @@ class PostListAdapter(private val markRead: (Long) -> Unit) :
                 override fun getSelectionKey(): Long = itemId
                 override fun getPosition(): Int = absoluteAdapterPosition
             }
-    }
-
-    companion object {
-        const val POST_ID = "postId"
     }
 }
 

@@ -41,11 +41,13 @@ android {
 
     kotlinOptions {
         jvmTarget = JavaVersion.VERSION_17.toString()
+        allWarningsAsErrors = true
     }
 
     buildFeatures {
         viewBinding = true
     }
+
     namespace = "com.example.primarydetail"
 }
 

@@ -4,12 +4,12 @@ androidx-core = "1.13.1"
 appcompat = "1.7.0"
 constraintlayout = "2.1.4"
 coroutines = "1.8.1"
-expresso-core = "3.5.1"
-ext-junit = "1.1.5"
+expresso-core = "3.6.0"
+ext-junit = "1.2.0"
 hilt = "2.51.1"
 junit = "4.13.2"
 kotlin = "2.0.0"
-kotlin-serialization = "1.7.0"
+kotlin-serialization = "1.7.1"
 ksp = "2.0.0-1.0.22"
 lifecycle = "2.8.2"
 logging-interceptor = "5.0.0-alpha.14"
@@ -60,7 +60,6 @@ room = ["room-runtime", "room-ktx"]
 
 [plugins]
 agp = { id = "com.android.application", version.ref = "agp" }
-compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
 kotlin = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
 ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
